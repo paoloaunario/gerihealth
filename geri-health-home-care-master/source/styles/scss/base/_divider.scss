@@ -1,0 +1,39 @@
+@import '../reference/index';
+
+$block: 'divider';
+
+.#{$block} {
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	position: relative;
+
+	&::after,
+	&::before {
+		clear: both;
+		content: '';
+		display: table;
+	}
+
+	&::after {
+		border-bottom: 2px solid $primary;
+		bottom: 0;
+		content: '';
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+		width: 4rem;
+	}
+
+	&--action {
+		&::after {
+			border-bottom-color: $action;
+		}
+	}
+
+	&--left {
+		&::after {
+			left: 0;
+			transform: translateX(0);
+		}
+	}
+}

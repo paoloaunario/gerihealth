@@ -1,0 +1,57 @@
+---
+title: Careers
+layout: default.hbs
+---
+
+<section class="hero-panel hero-panel--center panel">
+	<div class="panel__container">
+		<h1 class="hero-panel__heading">Careers</h1>
+	</div>
+</section> 
+
+<section class="why-ghhc panel panel--center">
+	<div class="panel__container">
+		<h2 class="panel__heading">Why Geri Health Home Care</h2>
+		<ul class="why-ghhc__list">
+			<li class="why-ghhc__item">We are equal opportunity employer.</li>
+			<li class="why-ghhc__item">We support continuing education programs.</li>
+			<li class="why-ghhc__item">Ongoing educational in-service and web support to all staff.</li>
+			<li class="why-ghhc__item">Training and orientation will be provided for all new assignment.</li>
+		</ul>
+	</div>
+</section>
+
+<section class="opportunities panel panel--off-white">
+	<div class="panel__container">
+		<h2 class="panel__heading panel__heading--center">Latest Postings</h2>
+		<div class="opportunities__content">
+			{{#> career-post 
+			id-number="1"
+			title="Registered Nurse"
+			deadline="05/11/2018"}}
+				This is a casual employment opportunity to provide high quality care to our clients in the community. The Registered Nurse coordinates and delivers nursing care as directed by client’s Individualized Care Plan and in accordance with Agency Policies and Procedures and CNO Professional practice standards. The RN works collaboratively with the Director of care as needed.
+			{{/career-post}}
+
+			{{#> career-post 
+			id-number="2"
+			title="Registered Practical Nurse"
+			deadline="05/11/2018"}}
+				This is a casual employment opportunity to provide high quality care to our clients in the community. The Registered Practical Nurse coordinates and delivers nursing care as directed by client’s Individualized Care Plan and in accordance with Agency Policies and Procedures and CNO Professional practice standards and scope of RPN practice. The RPN works collaboratively with the Director of care as needed.
+			{{/career-post}}
+
+			{{#> career-post
+			id-number="3"
+			title="Personal Support Worker"
+			deadline="05/11/2018"}}
+				This is a casual employment opportunity to provide high quality care to our clients in the community. The Personal Support Worker delivers non-clinical, supportive care in activities of daily living as directed by client’s Individualized Care Plan and in accordance with Agency Policies and Procedures. The Personal Support Worker works collaboratively with the Immediate Supervisor.
+			{{/career-post}}
+
+			{{#> career-post
+			id-number="4"
+			title="Caregiver/Housekeeper"
+			deadline="05/11/2018"}}
+				This is a casual employment opportunity to provide high quality care to our clients in the community. The Caregiver delivers non-clinical, supportive care in activities of daily living as directed by client’s Individualized Care Plan and in accordance with Agency Policies and Procedures. The Caregiver works collaboratively with the Immediate Supervisor.
+			{{/career-post}}
+		</div>
+	</div>
+</section>

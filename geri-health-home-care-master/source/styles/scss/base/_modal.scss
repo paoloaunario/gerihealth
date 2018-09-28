@@ -1,0 +1,134 @@
+@import '../reference/index';
+
+$block: 'modal';
+
+.#{$block} {
+	$top-distance-desktop: 2.625rem;
+	$right-distance-desktop: 3.375rem;
+
+	$top-distance-mobile: 1rem;
+
+	bottom: 0;
+	display: none;
+	left: 0;
+	padding: 1rem;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 999;
+
+	@include media-min(md) {
+		padding: 2rem;
+	}
+
+	*:first-child {
+		margin-top: 0;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	&--active {
+		align-items: center;
+		background-color: rgba($primary-off-white, .9);
+		display: flex;
+		justify-content: center;
+	}
+
+	&__container {
+		background: $white;
+		border-radius: .5rem;
+		box-shadow: 0 6px 11px 0 rgba(222, 222, 222, 50);
+		max-width: 32rem;
+		padding: $top-distance-mobile;
+		position: relative;
+
+		@include media-min(md) {
+			padding: 2.625rem 3.375rem;
+		}
+	}
+
+	&__heading {
+		@include font-size-19;
+
+		@include media-min(md) {
+			@include font-size-23;
+		}
+	}
+
+	&__content {
+		font-size: 14px;
+		max-height: 20rem;
+		overflow-y: scroll;
+		padding-right: 1rem;
+
+		&-container {
+			position: relative;
+
+			&--hidden {
+				&::after {
+					opacity: 0 !important;
+					transition: 500ms opacity ease;
+				}
+			}
+
+			&::after {
+				background: linear-gradient(to bottom, rgba($white, 0), $white);
+				bottom: 0;
+				content: '';
+				height: 5rem;
+				left: 0;
+				opacity: 1;
+				position: absolute;
+				right: 1rem;
+				transition: 500ms opacity ease;
+			}
+		}
+
+		@include media-min(md) {
+			@include font-size-16;
+		}
+	}
+
+	&__close {
+		$size: 1.5rem;
+
+		@include image-replacement;
+
+		@include background-image-fill('images/icons/close.svg', $grey, $size, $size);
+
+		cursor: pointer;
+		height: $size;
+		position: absolute;
+		right: $top-distance-mobile;
+		top: calc(#{$top-distance-mobile} + (40px / 2));
+		transform: translateY(-50%);
+		width: $size;
+
+		@include media-min(md) {
+			right: $right-distance-desktop;
+			top: calc(#{$top-distance-desktop} + (51px / 2));
+		}
+
+		@include hover-focus {
+			@include background-image-fill('images/icons/close.svg', $black, $size, $size);
+		}
+	}
+
+	&__button-container {
+		text-align: right;
+	}
+
+	&__button {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1rem;
+
+		@include media-min(md) {
+			margin-left: none;
+			margin-right: none;
+			margin-top: 2rem;
+		}
+	}
+}

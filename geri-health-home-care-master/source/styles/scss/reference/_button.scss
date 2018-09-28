@@ -1,0 +1,31 @@
+@mixin button {
+	@include font-size-16;
+
+	@include font-weight(700);
+
+	background-color: $action;
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.5;
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+
+	@include hover-focus {
+		background-color: $action-dark;
+	}
+
+	&--small-on-mobile {
+		font-size: 14px;
+		padding: .5rem 1rem;
+
+		@include media-min(md) {
+			@include font-size-16;
+
+			padding: 1rem 2rem;
+		}
+	}
+}

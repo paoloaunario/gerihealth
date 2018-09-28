@@ -1,0 +1,152 @@
+@import '../reference/index';
+
+@mixin media-row {
+	@include media-min(lg) {
+		@content
+	}
+}
+$block: 'header';
+
+.#{$block} {
+	position: fixed;
+	top: 0;
+	transition: top 200ms ease-out;
+	width: 100%;
+
+	&,
+	&__logo {
+		@include z-index-header;
+	}
+
+	@include media-row {
+		position: relative;
+	}
+
+	&__button {
+		$icon-size: 20px;
+
+		@include background-image-fill('images/icons/menu.svg', $grey, $icon-size, $icon-size);
+
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		display: block;
+		height: $icon-size;
+		left: 2rem;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: $icon-size;
+
+		@include media-row {
+			display: none;
+		}
+
+		@include hover {
+			@include background-image-fill('images/icons/menu.svg', $black, $icon-size, $icon-size);
+		}
+
+		&--active {
+			@include background-image-fill('images/icons/close.svg', $black, $icon-size, $icon-size);
+
+			@include hover {
+				@include background-image-fill('images/icons/close.svg', $black, $icon-size, $icon-size);
+			}
+		}
+	}
+
+	&__info-bar {
+		background-color: $white;
+		z-index: 2;
+
+		@include media-row {
+			background-color: $grey-lightest;
+		}
+
+		.info-bar__container {
+			$horizontal-padding: 2rem;
+
+			padding-left: $horizontal-padding;
+			padding-right: $horizontal-padding;
+			text-align: right;
+
+			@include media-min(md) {
+				$horizontal-padding: 4rem;
+			}
+		}
+
+		a {
+			@include color-states($black, $black, $primary-dark);
+		}
+	}
+
+	&__nav {
+		@include font-family-montserrat;
+
+		box-shadow: 0 5px 10px 0 rgba($black, .1);
+		display: flex;
+		flex-direction: column;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transform: translateY(-100%);
+		transition: transform 300ms ease;
+
+		&--active {
+			transform: translateY(0);
+		}
+
+		@include media-row {
+			box-shadow: none;
+			flex-direction: row;
+			justify-content: space-between;
+			position: relative;
+			transform: translateY(0);
+		}
+
+		.#{$block}__logo {
+			display: none;
+			max-width: 12rem;
+			padding: 0;
+
+			@include media-row {
+				display: flex;
+			}
+
+			&::after {
+				display: none;
+			}
+
+			.logo__picture {
+				margin-bottom: 0;
+				margin-top: 0;
+				max-width: none;
+			}
+		}
+	}
+
+	&__logo {
+		background-color: $white;
+		display: flex;
+		position: relative;
+
+		@include media-row {
+			display: none;
+		}
+
+		.logo__picture {
+			margin: 1rem auto;
+
+			max-width: 15rem;
+		}
+
+		&::after {
+			border-bottom: 1px solid $grey-light;
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+	}
+}

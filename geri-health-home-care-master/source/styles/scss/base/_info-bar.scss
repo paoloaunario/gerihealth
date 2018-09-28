@@ -1,0 +1,94 @@
+@import '../reference/index';
+
+$icon-size: 15px;
+
+@mixin icon-position($src) {
+	&::before {
+		@include background-image-fill($src, $primary, $icon-size, $icon-size, 50%, 50%);
+
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: $icon-size;
+	}
+}
+
+$block: 'info-bar';
+
+.#{$block} {
+	background-color: $grey-lightest;
+	position: relative;
+
+	&--primary,
+	&--primary-dark {
+		.#{$block}__text {
+			color: $white;
+		}
+	}
+
+	&--primary {
+		background-color: $primary;
+
+		&-dark {
+			background-color: $primary-dark;
+		}
+	}
+
+	&--center {
+		.#{$block}__text {
+			text-align: center;
+		}
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		line-height: 26px;
+		margin: 0;
+		padding: .75rem 0;
+	}
+
+	&__item {
+		@include font-size-13;
+
+		display: inline-block;
+		list-style: none;
+		margin-left: 2rem;
+		padding-left: $icon-size + 12px;
+		position: relative;
+
+		@include media-min(xs) {
+			@include font-size-16;
+
+			margin-left: 3rem;
+		}
+
+		&--phone {
+			@include icon-position('images/icons/phone.svg');
+		}
+
+		&--email {
+			@include icon-position('images/icons/envelope.svg');
+		}
+	}
+
+	&__text {
+		margin: 0;
+		padding-bottom: 2rem;
+		padding-top: 2rem;
+
+		&--uppercase {
+			text-transform: uppercase;
+		}
+
+		&--lg {
+			@include font-size-23;
+
+			@include font-weight(600);
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@import '../reference/index';
+
+$block: 'acf-form';
+
+.#{$block} {
+	@include container(40rem);
+
+	margin-top: 3rem;
+	padding: 0 !important;
+
+	@include media-min(xs) {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.acf-button {
+		@include button;
+	}
+
+	.af-label {
+		@include hidden;
+	}
+
+	.acf-input-wrap {
+		input {
+			height: auto !important;
+		}
+	}
+
+	&__input {
+		$vertical-margin: calc(2rem / 2);
+
+		margin-bottom: $vertical-margin;
+		margin-top: $vertical-margin;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		input,
+		textarea {
+			border: 1px solid $grey-light;
+			border-radius: 4px;
+			box-sizing: border-box;
+			padding: 1rem 1.5rem;
+			width: 100%;
+		}
+	}
+}

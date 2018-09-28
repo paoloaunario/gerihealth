@@ -1,0 +1,19 @@
+# Vendor files
+bower_components
+
+# Node Modules
+node_modules
+
+# Generated files
+build
+production
+.tmp
+.publish
+.DS_Store
+
+# Sublime Project files
+*.sublime-project
+*.sublime-workspace
+
+# VS Code project files
+.vscode/

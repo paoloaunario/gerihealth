@@ -1,0 +1,41 @@
+@import '../reference/index';
+
+$block: 'column';
+
+.#{$block} {
+	@include column;
+
+	flex: 1 auto;
+	margin-top: 2rem;
+
+	.divider {
+		margin-top: 0;
+	}
+
+	// Reset if row is within column
+	.row {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	@for $i from 1 through 12 {
+		&--#{$i} {
+			@include media-min(lg) {
+				@include column($i);
+			}
+		}
+
+		&--push-#{$i} {
+			@include media-min(lg) {
+				@include column-push($i);
+			}
+		}
+
+		&--pull-#{$i} {
+			@include media-min(lg) {
+				@include column-pull($i);
+			}
+		}
+	}
+}

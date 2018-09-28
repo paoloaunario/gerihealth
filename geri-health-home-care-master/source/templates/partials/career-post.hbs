@@ -1,0 +1,45 @@
+<div class="opportunities__post">
+	<div class="row">
+		<div class="column column--3">
+			<div class="opportunities__heading-container">
+				<h3 class="opportunities__heading">{{{ title }}}</h3>
+				<p class="help-text">Deadline: {{{ deadline }}}</p>
+			</div>
+			<div class="divider divider--left"></div>
+		</div>
+		<div class="column">
+			<p class="opportunities__description">{{> @partial-block }}</p>
+			<div class="opportunities__button-container button-container">
+				<button class="button button--border" aria-controls='modal-{{{ id-number }}}' data-modal-button>View details</button>
+				<a href="" class="button">Apply now</a>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id='modal-{{{ id-number }}}'>
+		<div class="modal__container">
+			<h2 class="modal__heading">
+				Registered Nurse
+			</h2>
+			<div class="modal__content-container">
+				<div class="modal__content">
+					<p>Summary of Duties:</p>
+					<ul>
+						<li>The Registered Nurse is responsible for the care of our clients utilizing advance nursing assessment skills, plan and providing nursing care according to RN’s training and skills set competency.</li>
+						<li>Monitors and evaluates effectiveness of care and revises care plan as needed. </li>
+						<li>Documents client’s care and reports client’s condition changes to immediate Supervisor.</li>
+						<li>Receives, transcribes and carry out Physician’s order as needed.</li>
+						<li>Provide health teaching to client and its family.</li>
+						<li>Maintains and protects clinical record and client’s personal information at all times.</li>
+						<li>Other clinical duties as appropriate.</li>
+					</ul>
+				</div>
+			</div>
+			<button class="modal__close" aria-controls="modal-{{{ id-number }}}" data-modal-button>
+				Close modal
+			</button>
+			<div class="button-container modal__button-container">
+				<a href="" class="button button--small-on-mobile modal__button">Apply now</a>
+			</div>
+		</div>
+	</div>
+</div>

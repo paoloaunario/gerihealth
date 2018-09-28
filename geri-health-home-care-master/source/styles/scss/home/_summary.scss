@@ -1,0 +1,25 @@
+@import '../reference/index';
+
+$block: 'summary';
+
+.#{$block} {
+	&__content {
+		z-index: 2;
+	}
+
+	&__picture {
+		bottom: -8.375rem;
+		display: none;
+		position: absolute;
+		right: 0;
+
+		@include media-min(lg) {
+			display: block;
+		}
+	}
+
+	&__image {
+		display: block;
+		max-width: 40rem;
+	}
+}

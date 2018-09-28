@@ -1,0 +1,30 @@
+@import '../reference/index';
+
+$block: 'why-ghhc';
+
+.#{$block} {
+	&__list {
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		margin-top: 2rem;
+		padding: 0;
+		text-align: left;
+	}
+
+	&__item {
+		padding-left: 3.5rem;
+		position: relative;
+
+		&::after {
+			@include background-image-fill('images/icons/checkmark.svg', $action, 20px, 40px, 50%, 50%);
+
+			content: '';
+			height: 32px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 20px;
+		}
+	}
+}

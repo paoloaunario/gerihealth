@@ -1,0 +1,44 @@
+@import '../reference/index';
+
+html {
+	@include font-smoothing;
+
+	@include media-min(md) {
+		font-size: $font-size;
+	}
+}
+
+body {
+	@include font-family-work-sans;
+
+	line-height: 2.15;
+	position: relative;
+}
+
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+nav {
+	@include font-family-montserrat;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	@include hidden;
+}
+
+.container {
+	@include container;
+}
+
+.help-text {
+	@include help-text;
+}

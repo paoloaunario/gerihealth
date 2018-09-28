@@ -1,0 +1,7 @@
+@mixin z-index-header {
+	z-index: 3;
+}
+
+@mixin z-index-footer {
+	z-index: 2;
+}

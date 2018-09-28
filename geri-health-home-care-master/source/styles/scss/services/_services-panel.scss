@@ -1,0 +1,37 @@
+@import '../reference/index';
+
+$block: 'services-panel';
+
+.#{$block} {
+	.divider {
+		margin-bottom: 1rem;
+	}
+
+	&__row {
+		align-items: baseline;
+	}
+
+	&__service {
+		margin-top: 3rem;
+	}
+
+	&__heading {
+		line-height: 1.25;
+		margin-top: 0;
+	}
+
+	&__item {
+		$vertical-margin: calc(1.5rem / 2);
+
+		margin-bottom: $vertical-margin;
+		margin-top: $vertical-margin;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

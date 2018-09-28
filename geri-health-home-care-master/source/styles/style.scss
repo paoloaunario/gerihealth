@@ -1,0 +1,23 @@
+/*!
+Theme Name: Geri Health Home Care
+Author: Mark Jimenez
+Author URI: https://wordpress.org/
+Description: This is a theme for Geri Health Home Care
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gerihealthhomecare
+*/
+
+@import 'scss/vendor/normalize/normalize';
+@import 'scss/vendor/swiper/swiper';
+
+@import 'scss/base/index';
+
+@import 'scss/about/index';
+@import 'scss/careers/index';
+@import 'scss/footer/index';
+@import 'scss/header/index';
+@import 'scss/hero-panel/index';
+@import 'scss/home/index';
+@import 'scss/services/index';

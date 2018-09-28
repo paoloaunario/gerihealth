@@ -1,0 +1,64 @@
+@import '../reference/index';
+
+$block: 'about-panel';
+
+.#{$block} {
+	&__content {
+		color: $grey-dark;
+
+		* {
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		h2,
+		b {
+			color: $black !important;
+		}
+
+		h2[data-topic-header] {
+			font-size: 2rem;
+			letter-spacing: .25rem;
+			position: relative;
+			text-transform: uppercase;
+
+			span {
+				color: $action;
+				display: none;
+				left: -4.5rem;
+				position: absolute;
+			}
+		}
+	}
+
+	&__figure {
+		background-color: $primary-off-white;
+		margin: 4rem -2rem;
+
+		@include media-min(xs) {
+			padding: 1.5rem 3rem;
+		}
+
+		div,
+		img {
+			max-width: 100%;
+		}
+
+		img {
+			display: block;
+			height: auto !important;
+			margin: 0;
+		}
+
+		.wp-caption-text {
+			@include help-text;
+
+			margin-top: .5rem;
+		}
+	}
+}

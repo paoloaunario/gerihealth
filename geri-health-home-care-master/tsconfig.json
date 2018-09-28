@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "lib": [
+			"dom",
+			"es5",
+			"scripthost",
+			"es2015.iterable"
+		],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5"
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": false
+  }
+}

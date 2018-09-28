@@ -1,0 +1,61 @@
+@import '../reference/index';
+
+$block: 'opportunities';
+
+.#{$block} {
+	.divider {
+		margin-bottom: 0;
+	}
+
+	&__content {
+		margin-top: 2rem;
+	}
+
+	&__post {
+		& + & {
+			margin-top: 4rem;
+
+			@include media-min(lg) {
+				margin-top: 6rem;
+			}
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		.column + .column {
+			margin-top: 0;
+
+			@include media-min(lg) {
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	&__heading {
+		margin-top: 0;
+
+		@include media-min(md) {
+			margin-top: 1rem;
+		}
+
+		&-container {
+			* {
+				margin: 0;
+
+				&:last-child {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+
+	&__button-container {
+		text-align: center;
+
+		@include media-min(md) {
+			text-align: left;
+		}
+	}
+}

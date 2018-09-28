@@ -1,0 +1,78 @@
+@import '../reference/index';
+
+$block: 'panel';
+
+.#{$block} {
+	$vertical-padding: 4rem;
+
+	padding-bottom: $vertical-padding;
+	padding-top: $vertical-padding;
+
+	@include media-min(md) {
+		$vertical-padding: 8.375rem;
+
+		padding-bottom: $vertical-padding;
+		padding-top: $vertical-padding;
+	}
+
+	&--off-white {
+		background-color: $primary-off-white;
+	}
+
+	&--text-light {
+		p {
+			color: $grey-lighter;
+		}
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	&__container {
+		@include container;
+
+		&--small {
+			@include container(40rem);
+		}
+	}
+
+	&__heading {
+		@include font-size-33;
+		@include heading;
+
+		@include font-weight(800);
+
+		margin: 0;
+		text-transform: uppercase;
+
+		@include media-min(md) {
+			@include font-size-40;
+		}
+
+		&--center {
+			text-align: center;
+		}
+	}
+
+	&__subheading {
+		@include font-size-19;
+
+		color: $black !important;
+		line-height: 1.5;
+	}
+
+	&__text {
+		margin-top: 2rem;
+
+		.#{$block}__subheading + & {
+			margin-top: 1rem;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}

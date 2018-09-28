@@ -1,0 +1,76 @@
+@import '../reference/index';
+
+$block: 'nav';
+
+.#{$block} {
+	background-color: $white;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	text-align: right;
+
+	@include media-min(md) {
+		@include container;
+	}
+
+	&__list {
+		$vertical-padding: 1rem;
+
+		margin: 0;
+		padding: $vertical-padding 0;
+
+		@include media-min(md) {
+			$vertical-padding: 2.5rem;
+
+			padding: $vertical-padding 0;
+		}
+	}
+
+	&__item {
+		$horizontal-margin: calc(2rem / 2);
+
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		text-transform: uppercase;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include media-min(md) {
+			display: inline-block;
+			margin-left: $horizontal-margin;
+			margin-right: $horizontal-margin;
+			text-align: inherit;
+		}
+	}
+
+	&__link {
+		@include color-states($grey, $black, $black);
+
+		@include font-weight(600);
+
+		padding-bottom: .25rem;
+		text-decoration: none;
+
+		@include hover-focus {
+			border-bottom: 2px solid $primary;
+		}
+
+		@include media-min(md) {
+			padding-bottom: .75rem;
+		}
+
+		&--active {
+			@include color-states($black, $black, $black);
+
+			border-bottom: 2px solid $primary;
+		}
+	}
+}

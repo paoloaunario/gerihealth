@@ -1,0 +1,19 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"indent": [
+			true,
+			"tabs"
+		],
+		"no-console": [
+			false
+		],
+		"no-unused-expression": false,
+		"prefer-for-of": false,
+		"quotemark": [
+			true,
+			"single"
+		],
+		"trailing-comma": false
+	}
+}
